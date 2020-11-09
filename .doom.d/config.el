@@ -25,9 +25,10 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-horizon)
-
- ;;     doom-font (font-spec: family "Mononoki Nerd Font Mono" size 15))
+;;(setq doom-theme 'doom-horizon)
+(add-to-list 'custom-theme-load-path "~/.doom.d/themes")
+(setq doom-theme 'my-theme-1)
+;;     doom-font (font-spec: family "Mononoki Nerd Font Mono" size 15))
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
