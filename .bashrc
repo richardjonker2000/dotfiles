@@ -1,6 +1,6 @@
 #
 # ~/.bashrc
-#
+# test commit
 
 #Ibus settings if you need them
 #type ibus-setup in terminal to change settings and start the daemon
