@@ -47,9 +47,9 @@
 		"branch:divider":             { "fg": "gray7", "bg": "gray2", "attrs": [] },
 		"stash":                      "branch_dirty",
 		"stash:divider":              "branch:divider",
-		"cwd":                        "information:additional",
-		"cwd:current_folder":         "information:regular",
-		"cwd:divider":                { "fg": "gray7", "bg": "gray4", "attrs": [] },
+		"cwd":                        { "fg": "black", "bg": "solarized:blue", "attrs": [] },
+		"cwd:current_folder":         { "fg": "solarized:blue", "bg": "black", "attrs": [] },
+		"cwd:divider":                { "fg": "black", "bg": "solarized:blue", "attrs": [] },
 		"virtualenv":                 { "fg": "white", "bg": "darkcyan", "attrs": [] },
 		"attached_clients":           { "fg": "gray8", "bg": "gray0", "attrs": [] }
 	}
