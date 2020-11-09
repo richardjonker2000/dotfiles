@@ -15,7 +15,7 @@ local math, string, os = math, string, os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
-theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/powerarrow-blue"
+theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/my-theme-1"
 theme.wallpaper                                 = theme.dir .. "/wallpaper.jpg"
 theme.font                                      = "Noto Sans Regular 11"
 theme.taglist_font                              = "Noto Sans Regular 14"
@@ -25,7 +25,11 @@ theme.fg_urgent                                 = "#b74822"
 theme.bg_normal                                 = "#000000"
 theme.bg_focus                                  = "#1E2320"
 theme.bg_urgent                                 = "#3F3F3F"
-theme.taglist_fg_focus                          = "#889FA7"
+--theme.taglist_fg_focus                          = "#889FA7"
+theme.taglist_fg_focus                          = "#00FFFF"
+theme.taglist_bg_focus                          = "#000000"
+theme.taglist_fg_unfocus                          = "#FF0000"
+
 theme.tasklist_bg_focus                         = "#000000"
 theme.tasklist_fg_focus                         = "#889FA7"
 theme.border_width                              = dpi(2)
@@ -365,13 +369,16 @@ function theme.at_screen_connect(s)
                            awful.button({ }, 4, function () awful.layout.inc( 1) end),
                            awful.button({ }, 5, function () awful.layout.inc(-1) end)))
     -- Create a taglist widget
-    s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
+    s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons,{
+                                           offset = 5,
+                                           spacing = 5
+                                      })
 
     -- Create a tasklist widget
     --s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
     -- Create the wibox the .."0" is opacity
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(22), bg = theme.bg_normal .. "0", fg = theme.fg_normal })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(22), bg = theme.bg_normal .. "70", fg = theme.fg_normal })
 
     -- Add widgets to the wibox
     s.mywibox:setup {

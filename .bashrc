@@ -224,6 +224,11 @@ ex ()
 #in there. They will not be overwritten by skel.
 
 [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
-
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  source $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
+fi
 neofetch
 alias dotfiles='/usr/bin/git --git-dir=/home/richard/.dotfiles/ --work-tree=/home/richard'
