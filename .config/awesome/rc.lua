@@ -132,7 +132,7 @@ awful.util.terminal = terminal
 --awful.util.tagnames = {  "➊", "➋", "➌", "➍", "➎", "➏", "➐", "➑", "➒", "➓" }
 --awful.util.tagnames = { "⠐", "⠡", "⠲", "⠵", "⠻", "⠿" }
 --awful.util.tagnames = { "⌘", "♐", "⌥", "ℵ" }
-awful.util.tagnames = { "term", "chrome", "emacs", "?", "?" }
+awful.util.tagnames = { "term", "chrome", "emacs", "whatsapp", "?" }
 -- Use this : https://fontawesome.com/cheatsheet
 --awful.util.tagnames = { "", "", "", "", "" }
 awful.layout.suit.tile.left.mirror = true
@@ -351,7 +351,7 @@ globalkeys = my_table.join(
     awful.key({ modkey }, "c", function () awful.util.spawn( "conky-toggle" ) end,
         {description = "conky-toggle", group = "super"}),
     awful.key({ modkey }, "e", function () awful.util.spawn( editorgui ) end,
-        {description = "run gui editor", group = "super"}),
+        {description = "run emacs", group = "super"}),
     --awful.key({ modkey }, "h", function () awful.util.spawn( "urxvt -T 'htop task manager' -e htop" ) end,
         --{description = "htop", group = "super"}),
     awful.key({ modkey }, "r", function () awful.util.spawn( "rofi-theme-selector" ) end,
@@ -365,7 +365,9 @@ globalkeys = my_table.join(
     awful.key({ modkey }, "x",  function () awful.util.spawn( "arcolinux-logout" ) end,
       {description = "exit", group = "hotkeys"}),
     awful.key({ modkey }, "Escape", function () awful.util.spawn( "xkill" ) end,
-        {description = "Kill proces", group = "hotkeys"}),
+      {description = "Kill process", group = "hotkeys"}),
+     awful.key({ modkey }, "w", function () awful.util.spawn( "whatsapp-nativefier" ) end,
+        {description = "Run whatsapp", group = "hotkeys"}),
 
     -- super + shift + ...
     awful.key({ modkey, "Shift"   }, "Return", function() awful.util.spawn( filemanager ) end),
@@ -933,7 +935,8 @@ awful.rules.rules = {
 
     { rule = { class = "Chromium" },
         properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
-
+    { rule = { class = "whatsapp-nativefier-d40211"},
+        properties = { screen = 1, tag = awful.util.tagnames[4], switchtotag = true  } },
     --{ rule = { class = "Opera" },
       --properties = { screen = 1, tag = awful.util.tagnames[1],switchtotag = true  } },
 
