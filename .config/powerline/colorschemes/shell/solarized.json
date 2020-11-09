@@ -6,7 +6,7 @@
 	"mode_translations": {
 		"vicmd": {
 			"groups": {
-				"mode": { "fg": "solarized:white_red", "bg": "solarized:red", "attrs": ["bold"] }
+				"mode": { "fg": "solarized:blue", "bg": "solarized:red", "attrs": ["bold"] }
 			}
 		}
 	}

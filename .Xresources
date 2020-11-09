@@ -5,7 +5,7 @@
 ! ------------------------------------------------------------------------------
 
 xterm*font: 7x13
-xterm*faceName: Monospace:size=12:antialias=false
+xterm*faceName: DejaVuSansMono:size=12:antialias=false
 xterm*loginShell: true
 xterm*vt100*geometry: 90x34
 xterm*saveLines: 2000

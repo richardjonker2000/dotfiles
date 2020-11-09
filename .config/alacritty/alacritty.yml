@@ -8,21 +8,41 @@ colors:
   # Normal colors
   normal:
     black: '0x16161c'
-    red: '0xe95678'
-    green: '0x29d398'
-    yellow: '0xfab795'
-    blue: '0x26bbd9'
-    magenta: '0xee64ac'
-    cyan: '0x59e1e3'
+    blue: '0xe95678'
+    green: '0x09f7a0'
+    cyan: '0xfab795'
+    red: '0x25b2bc'
+    magenta: '0xb877db'
+    yellow: '0x59e3e3'
     white: '0xd5d8da'
 
   # Bright colors
   bright:
     black: '0x5b5858'
-    red: '0xec6a88'
+    blue: '0xec6a88'
     green: '0x3fdaa4'
-    yellow: '0xfbc3a7'
-    blue: '0x3fc4de'
-    magenta: '0xf075b5'
-    cyan: '0x6be4e6'
+    cyan: '0xfbc3a7'
+    red: '0x3fc4de'
+    magenta: '0x6c6f93'
+    yellow: '0x6be4e6'
     white: '0xd5d8da'
+font:
+  # The size to use.
+  size: 12
+  # The normal (roman) font face to use.
+  normal:
+    family: deja vu sans mono nerd font
+    # Style can be specified to pick a specific face.
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: Deja vu sans mono nerd font
+    # Style can be specified to pick a specific face.
+    # style: Bold
+
+  # The italic font face
+  italic:
+    family: Deja vu sans mono nerd font
+    # Style can be specified to pick a specific face.
+    # style: Italic
