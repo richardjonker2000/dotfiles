@@ -25,7 +25,7 @@ local wibox         = require("wibox")
 
 -- Theme handling library
 local beautiful     = require("beautiful")
-
+local spotify_shell = require("spotify")
 -- Notification library
 local naughty       = require("naughty")
 naughty.config.defaults['icon_size'] = 100
@@ -132,7 +132,7 @@ awful.util.terminal = terminal
 --awful.util.tagnames = {  "➊", "➋", "➌", "➍", "➎", "➏", "➐", "➑", "➒", "➓" }
 --awful.util.tagnames = { "⠐", "⠡", "⠲", "⠵", "⠻", "⠿" }
 --awful.util.tagnames = { "⌘", "♐", "⌥", "ℵ" }
-awful.util.tagnames = {"  ", "  ", "emacs", "  ", "?" }
+awful.util.tagnames = {"  ", "  ", "emacs", "  ","messenger", "?" }
 -- Use this : https://fontawesome.com/cheatsheet
 --awful.util.tagnames = { "", "", "", "", "" }
 awful.layout.suit.tile.left.mirror = true
@@ -368,7 +368,8 @@ globalkeys = my_table.join(
       {description = "Kill process", group = "hotkeys"}),
      awful.key({ modkey }, "w", function () awful.util.spawn( "whatsapp-nativefier" ) end,
         {description = "Run whatsapp", group = "hotkeys"}),
-
+ awful.key({ modkey, "Shift" }, "f", function () awful.util.spawn( "caprine" ) end,
+        {description = "Run messenger", group = "hotkeys"}),
     -- super + shift + ...
     awful.key({ modkey, "Shift"   }, "Return", function() awful.util.spawn( filemanager ) end),
 
@@ -937,7 +938,9 @@ awful.rules.rules = {
         properties = { screen = 1, tag = awful.util.tagnames[2], switchtotag = true  } },
     { rule = { class = "whatsapp-nativefier-d40211"},
         properties = { screen = 1, tag = awful.util.tagnames[4], switchtotag = true  } },
-    --{ rule = { class = "Opera" },
+     { rule = { class = "Caprine"},
+        properties = { screen = 1, tag = awful.util.tagnames[5], switchtotag = true  } },
+     --{ rule = { class = "Opera" },
       --properties = { screen = 1, tag = awful.util.tagnames[1],switchtotag = true  } },
 
     -- Set applications to always map on the tag 2 on screen 1.

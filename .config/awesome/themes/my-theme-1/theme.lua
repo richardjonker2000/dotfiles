@@ -10,7 +10,9 @@ local lain  = require("lain")
 local awful = require("awful")
 local wibox = require("wibox")
 local dpi   = require("beautiful.xresources").apply_dpi
-
+--
+--:w
+local spotify_widget = require("spotify")
 local math, string, os = math, string, os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
@@ -110,7 +112,7 @@ local separators = lain.util.separators
 -- Textclock
 local clockicon = wibox.widget.imagebox(theme.widget_clock)
 local clock = awful.widget.watch(
-    "date +'%a %d %b %R'", 60,
+    "date +'%a %d %b %R' ", 60,
     function(widget, stdout)
         widget:set_markup(" " .. markup.font(theme.font, stdout))
     end
@@ -167,6 +169,7 @@ theme.volume = lain.widget.alsabar({
 
 -- MPD
 local musicplr = "urxvt -title Music -g 130x34-320+16 -e ncmpcpp"
+--local musicplr = "spotify"
 local mpdicon = wibox.widget.imagebox(theme.widget_music)
 mpdicon:buttons(my_table.join(
     awful.button({ modkey }, 1, function () awful.spawn.with_shell(musicplr) end),
@@ -394,6 +397,7 @@ function theme.at_screen_connect(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
+           spotify_widget(),
             --[[ using shapes
             pl(wibox.widget { mpdicon, theme.mpd.widget, layout = wibox.layout.align.horizontal }, "#343434"),
             pl(task, "#343434"),
